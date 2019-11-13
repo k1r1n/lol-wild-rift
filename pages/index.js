@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
+import { lane } from "../common/lane";
 
 const Home = () => (
   <div>
@@ -20,36 +21,11 @@ const Home = () => (
       </h1>
       <div className="lane">
         <ul>
-          <li>
-            <img
-              className="icon"
-              src="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/ef/Top_icon.png/revision/latest?cb=20181117143602"
-            />
-          </li>
-          <li>
-            <img
-              className="icon"
-              src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/98/Middle_icon.png/revision/latest?cb=20181117143644"
-            />
-          </li>
-          <li>
-            <img
-              className="icon"
-              src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/97/Bottom_icon.png/revision/latest?cb=20181117143632"
-            />
-          </li>
-          <li>
-            <img
-              className="icon"
-              src="https://vignette.wikia.nocookie.net/leagueoflegends/images/1/1b/Jungle_icon.png/revision/latest?cb=20181117143559"
-            />
-          </li>
-          <li>
-            <img
-              className="icon"
-              src="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e0/Support_icon.png/revision/latest?cb=20181117143601"
-            />
-          </li>
+          {lane.map(items => (
+            <li>
+              <img className="icon" src={items.icon} />
+            </li>
+          ))}
         </ul>
       </div>
       <div className="container">
